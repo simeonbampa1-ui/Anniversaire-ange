@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 120, 175, 0.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(175, 100, 255, 0.20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #111321,
+            #241629,
+            #171522
+        );
+}
+
+
+/* =========================
+   PAGES
+========================= */
+
+.screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(30px) scale(0.97);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+}
+
+
+.screen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================
+   CARTE
+========================= */
+
+.card {
+
+    width: min(650px, 100%);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   TEXTE
+========================= */
+
+.small {
+
+    font-size: 12px;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: #dcb8d0;
+
+    margin-bottom: 22px;
+}
+
+
+h1,
+h2 {
+
+    font-family: 'DM Serif Display', serif;
+
+    font-weight: normal;
+}
+
+
+h1 {
+
+    font-size: clamp(42px, 8vw, 70px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+
+h2 {
+
+    font-size: clamp(30px, 6vw, 46px);
+
+    line-height: 1.2;
+
+    margin-bottom: 28px;
+}
+
+
+p {
+
+    color: rgba(255, 255, 255, 0.84);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin: 14px 0;
+}
+
+
+.highlight {
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+
+.number {
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #d6a9c5;
+
+    margin-bottom: 20px;
+}
+
+
+.question {
+
+    margin-top: 30px;
+
+    font-family: 'DM Serif Display', serif;
+
+    font-size: 27px;
+
+    line-height: 1.4;
+
+    color: #f4c9dc;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    margin-top: 28px;
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d76b9c,
+            #9b5cae
+        );
+
+    box-shadow:
+        0 10px 30px rgba(180, 80, 140, 0.28);
+
+    transition: 0.3s ease;
+}
+
+
+button:hover {
+
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(220, 100, 170, 0.35);
+}
+
+
+button:active {
+
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   PAGE FINALE
+========================= */
+
+.final-card {
+
+    max-width: 700px;
+
+    padding-top: 35px;
+}
+
+
+.final-title {
+
+    font-family: 'DM Serif Display', serif;
+
+    font-size: 30px;
+
+    color: #f0bfd5;
+
+    margin-bottom: 12px;
+}
+
+
+.final-card h1 {
+
+    font-size: clamp(38px, 7vw, 60px);
+
+    color: #ffe0eb;
+
+    margin-bottom: 28px;
+}
+
+
+.final-card p {
+
+    max-width: 570px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.separator {
+
+    margin: 25px 0;
+
+    color: #dca5c2;
+
+    font-size: 20px;
+
+    letter-spacing: 8px;
+}
+
+
+.love {
+
+    margin-top: 30px !important;
+
+    font-family: 'DM Serif Display', serif;
+
+    font-size: 28px !important;
+
+    color: #ffd3e3 !important;
+}
+
+
+.signature-text {
+
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+.signature {
+
+    margin-top: 5px;
+
+    font-family: 'DM Serif Display', serif;
+
+    font-size: 32px;
+
+    font-style: italic;
+
+    color: #f0bfd5;
+}
+
+
+/* =========================
+   COEUR
+========================= */
+
+.big-heart {
+
+    font-size: 65px;
+ 
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.14);
+    }
+}
+
+
+/* =========================
+   COEURS FLOTTANTS
+========================= */
+
+.hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+
+.heart {
+
+    position: absolute;
+
+    bottom: -40px;
+
+    opacity: 0;
+
+    animation:
+        floatHeart 7s linear forwards;
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+
+        opacity: 0.75;
+    }
+
+    90% {
+
+        opacity: 0.35;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .screen {
+
+        padding: 14px;
+    }
+
+
+    .card {
+
+        padding: 32px 22px;
+
+        border-radius: 24px;
+
+        max-height: 94vh;
+    }
+
+
+    p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    h1 {
+
+        font-size: 42px;
+    }
+
+
+    h2 {
+
+        font-size: 32px;
+    }
+
+
+    .question {
+
+        font-size: 23px;
+    }
+
+
+    .final-card h1 {
+
+        font-size: 38px;
+    }
+
+
+    .love {
+
+        font-size: 25px !important;
+    }
+
+
+    button {
+
+        width: 100%;
+
+        padding: 14px 20px;
+    }
+}
